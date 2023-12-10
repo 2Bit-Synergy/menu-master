@@ -1,0 +1,36 @@
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+
+# Virtual Environment
+venv/
+env/
+
+# Media
+media/
+
+# Static files
+staticfiles/
+
+# Secret key
+*.secret
+
+# Development
+*.sqlite3
+*.db
+*.sqlite
+*.db.sqlite3
+
+# IDE files
+.idea/
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
