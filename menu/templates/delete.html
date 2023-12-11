@@ -1,0 +1,9 @@
+{% extends 'layouts/base.html' %}
+{% block body %}
+  <form method="POST">
+    {% csrf_token %}
+    <h2>Are you sure you want to delete?</h2>
+    <a href="{% url 'menu:index' %}">No</a>
+    <button type="submit">Confirm</button>
+  </form>
+{% endblock %}
