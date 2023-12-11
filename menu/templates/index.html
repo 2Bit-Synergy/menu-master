@@ -1,4 +1,9 @@
 {% extends 'layouts/base.html' %}
 {% block body %}
-<h1>Index page</h1>
+<h1>Item List</h1>
+<ul>
+    {% for item in items %}
+    <li>{{ item.name }} - {{ item.description }} <button>View</button></li>
+    {% endfor %}
+</ul>
 {% endblock %}
