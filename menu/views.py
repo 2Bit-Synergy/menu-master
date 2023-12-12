@@ -3,20 +3,18 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .models import Item
 from .forms import ItemForm
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
-@login_required
-def index(request):
-    items = Item.objects.all()
-    
-    return render(request, 'index.html', { 'items': items })
+class IndexClassView(LoginRequiredMixin, ListView):
+    model = Item
+    template_name = 'index.html'
+    context_object_name = 'items'
 
-@login_required
-def detail(request, id):
-    item = Item.objects.get(pk=id)
-    context = {
-        'item': item
-    }
-    return render(request, 'detail.html', context)
+class DetailClassView(LoginRequiredMixin, DetailView):
+    model = Item
+    template_name = 'detail.html'
 
 @login_required
 def create(request):

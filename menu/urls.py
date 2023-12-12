@@ -5,8 +5,8 @@ from . import views
 app_name = 'menu'
 
 urlpatterns = [
-    path('', views.index, name="index"),
-    path('menu/<int:id>/', views.detail, name="detail"),
+    path('', views.IndexClassView.as_view(), name="index"),
+    path('menu/<int:pk>/', views.DetailClassView.as_view(), name="detail"),
     path('menu/create', views.create, name="create"),
     path('menu/update/<int:id>/', views.update, name="update"),
     path('menu/delete/<int:id>/', views.delete, name="delete"),
